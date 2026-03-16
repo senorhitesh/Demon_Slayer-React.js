@@ -54,23 +54,3 @@ const Hero = () => {
 export default Hero
 
 
-
-    //   <div className='relative overflow-x-hidden h-ful w-screen '>
-    //       <div id="video-frame" className='relative z-10 h-dvh w-fit overflow-hidden rounded-lg'>
-    //           <div className='clip-path-[polygon(0_0,100%_0,100%_100%,0_100%)] cursor-pointer  overflow-hidden rounded-lg'></div>
-    //     <div className='overflow-hidden w-fit border-4 rounded-md group hover:opacity-100 transition-opacity duration-500 ease-linear'
-    //       onClick={() => {
-    //              handleMiniVdClick()
-    //                     }} >
-    //                      <video
-    //                        ref={videoRef}
-    //                        src={videos[currentIndex]}
-    //                        muted
-    //                        loop
-    //                        id="current-video"
-    //                        className='object-center absolute top-1/2   object-cover size-54'
-    //                        onLoadedData={handleVideoLoaded}
-    //                      />
-    //             </div>
-    //       </div>
-    // </div>
