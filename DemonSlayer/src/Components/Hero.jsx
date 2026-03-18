@@ -4,6 +4,9 @@ import hero1 from "../assets/hero-videos/hero-1.mp4";
 import hero2 from "../assets/hero-videos/hero-2.mp4";
 import hero3 from "../assets/hero-videos/hero-3.mp4";
 import hero4 from "../assets/hero-videos/hero-4.mp4";
+import BottomText from "./Hero/BottomText";
+import HeroBtn from "./Hero/HeroBtn";
+import HeroInfo from "./Hero/HeroInfo";
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,11 +23,17 @@ const Hero = () => {
   };
   return (
     // Main Content
+
     <div className="relative h-full w-screen ">
+      <div className="relative w-full h-screen z-10 text-white">
+        <HeroInfo />
+        <HeroBtn />
+        <BottomText />
+      </div>
       {/* Bg-Video */}
       <div
         id="video-frame"
-        className="h-screen flex justify-center items-center"
+        className="h-screen flex z-0 justify-center items-center"
       >
         <video
           key={currentVideo}
@@ -32,14 +41,14 @@ const Hero = () => {
           autoPlay
           muted
           loop
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
         />
         <div className="clip-path-[polygon(0_0,100%_0,100%_100%,0_100%)] cursor-pointer  overflow-hidden rounded-lg"></div>
         {/* Center-Video */}
         <div
-          className="overflow-hidden  w-fit group rounded-md group opacity-0 hover:opacity-100 transition-opacity duration-200 ease-linear"
+          className="overflow-hidden  z-0 w-fit group rounded-md group opacity-0 hover:opacity-100 transition-opacity duration-200 ease-linear"
           onClick={() => {
-            handleMiniVdClick();
+            handleClick();
           }}
         >
           <video
@@ -49,8 +58,7 @@ const Hero = () => {
             muted
             loop
             id="current-video"
-            className="object-center scale-100 group-hover:scale-120 transition duration-75 object-cover size-64 "
-            // onLoadedData={handleVideoLoaded}
+            className="object-center scale-100 group-hover:scale-120  z-0 transition duration-75 object-cover size-64 "
             onMouseEnter={(e) => {
               e.target.play();
             }}

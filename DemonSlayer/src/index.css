@@ -11,7 +11,9 @@
     src: url("./assets/font/L0x5DF4xlVMF-BfR8bXMIjhLq38.otf") format("opentype");
   }
 }
-
+*{
+  font-family: "Roboto Mono";
+}
 body {
   font-family: "Secondary";
   width: 100dvw;
@@ -244,3 +246,6 @@ body {
     clip-path: polygon(29% 15%, 85% 30%, 50% 100%, 10% 64%);
   }
 } */
+
+
+
