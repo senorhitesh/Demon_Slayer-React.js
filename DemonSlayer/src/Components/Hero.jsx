@@ -42,7 +42,6 @@ const Hero = () => {
   const nextVideo = videos[(currentIndex + 1) % videos.length];
 
   const handleClick = () => {
-    sethasClicked(true);
     setCurrentIndex((prev) => (prev + 1) % videos.length);
   };
 
@@ -83,10 +82,9 @@ const Hero = () => {
             loop
             playsInline
             className="object-cover size-64 scale-100 group-hover:scale-110 transition duration-300"
-            onMouseEnter={() => hoverRef.current?.play()}
-            onMouseLeave={() => {
-              hoverRef.current?.pause();
-              sethasClicked(false);
+            onMouseEnter={(e) => e.target?.play()}
+            onMouseLeave={(e) => {
+              e.target.pause();
             }}
           />
         </div>
