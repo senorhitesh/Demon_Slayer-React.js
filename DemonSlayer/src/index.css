@@ -254,7 +254,7 @@ body {
     @apply relative ms-10 font-["Secondary"] text-xs uppercase text-blue-50 after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-white cursor-pointer;
   }
  .hero-btn-responsivness {
-    @apply min-[334px]:scale-63 min-[334px]:top-34 md:top-45 sm:top-45 lg:top-42 lg:left-2.5 md:left-0 md:scale-75 sm:scale-75 sm:left-0 min-[635px]:scale-75 min-[635px]:left-0 min-[507px]:top-30 min-[499px]:top-29 min-[446px]:top-29 min-[400px]:top-29 lg:scale-80 ;
+    @apply min-[334px]:scale-63 min-[334px]:top-34 md:top-39 sm:top-40 lg:top-45 lg:left-2.5 md:left-0 md:scale-75 sm:scale-75 sm:left-0 min-[635px]:scale-75 min-[635px]:left-0 min-[507px]:top-30 min-[499px]:top-29 min-[446px]:top-29 min-[400px]:top-29 lg:scale-80 ;
   }
 
   .clip{
