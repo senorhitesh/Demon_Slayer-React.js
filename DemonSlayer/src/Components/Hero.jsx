@@ -23,17 +23,11 @@ const Hero = () => {
   };
   return (
     // Main Content
-
-    <div className="relative h-full w-screen ">
-      <div className="relative w-full h-screen z-10 text-white">
-        <HeroInfo />
-        <HeroBtn />
-        <BottomText />
-      </div>
-      {/* Bg-Video */}
+    <div className="relative h-screen w-screen">
+      {/* Bg-Video - BEHIND everything */}
       <div
         id="video-frame"
-        className="h-screen flex z-0 justify-center items-center"
+        className="absolute inset-0 flex items-center justify-center z-0"
       >
         <video
           key={currentVideo}
@@ -41,15 +35,12 @@ const Hero = () => {
           autoPlay
           muted
           loop
-          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          className="absolute top-0 left-0 w-full h-screen object-cover"
         />
-        <div className="clip-path-[polygon(0_0,100%_0,100%_100%,0_100%)] cursor-pointer  overflow-hidden rounded-lg"></div>
         {/* Center-Video */}
         <div
-          className="overflow-hidden  z-0 w-fit group rounded-md group opacity-0 hover:opacity-100 transition-opacity duration-200 ease-linear"
-          onClick={() => {
-            handleClick();
-          }}
+          className="overflow-hidden absolute z-10 w-fit group rounded-md opacity-0 hover:opacity-100 transition-opacity duration-200 ease-linear"
+          onClick={handleClick}
         >
           <video
             key={currentIndex}
@@ -58,16 +49,19 @@ const Hero = () => {
             muted
             loop
             id="current-video"
-            className="object-center scale-100 group-hover:scale-120  z-0 transition duration-75 object-cover size-64 "
-            onMouseEnter={(e) => {
-              e.target.play();
-            }}
-            onMouseLeave={(e) => {
-              e.target.pause();
-            }}
+            className="object-center scale-100 group-hover:scale-120 transition duration-75 object-cover size-64"
+            onMouseEnter={(e) => e.target.play()}
+            onMouseLeave={(e) => e.target.pause()}
             onClick={handleClick}
           />
         </div>
+      </div>
+
+      {/* UI Layer - ABOVE video */}
+      <div className="relative w-full h-screen z-20 text-white pointer-events-none">
+        <HeroInfo />
+        <HeroBtn />
+        <BottomText />
       </div>
     </div>
   );
