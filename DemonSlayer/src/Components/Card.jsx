@@ -1,10 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
-import { motion, spring, useScroll } from "framer-motion";
-const Card = () => {
+import React, { createContext, useEffect, useRef, useState } from "react";
+import { motion, spring } from "framer-motion";
+
+const Card = ({ activeName, setactiveName }) => {
   const cards = [
     {
       id: 1,
       name: "Tanjiro Kamado",
+      firstName: "Tanjiro",
       description:
         "A kind-hearted and resilient young man from a humble background who becomes a Demon Slayer after his family is slaughtered by demons",
       image:
@@ -21,6 +23,7 @@ const Card = () => {
     {
       id: 2,
       name: "Zenitsu Agatsuma",
+      firstName: "Zenitsu",
       description:
         "Zenitsu known for his extreme cowardice and anxiety, which contrast sharply with his hidden strength and bravery",
       image:
@@ -37,6 +40,7 @@ const Card = () => {
     {
       id: 3,
       name: "Inosuke Hashibira",
+      firstName: "Inosuke",
       description:
         "Inosuke known for his wild, aggressive personality and unmatched combat prowess.",
       tag: "Venusaur",
@@ -59,6 +63,9 @@ const Card = () => {
         return (
           <motion.div key={card.id} className={`${card.className}`}>
             <motion.button
+              onMouseEnter={() => {
+                setactiveName(card.firstName.toUpperCase());
+              }}
               whileHover={{
                 scale: 1.2,
                 rotate: 0,
