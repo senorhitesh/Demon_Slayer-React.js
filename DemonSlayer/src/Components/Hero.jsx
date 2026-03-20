@@ -60,7 +60,7 @@ const Hero = () => {
           ref={bgVideoRef}
           key={currentVideo}
           src={currentVideo}
-          autoPlay
+          // autoPlay
           muted
           loop
           playsInline
